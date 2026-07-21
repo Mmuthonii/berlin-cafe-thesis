@@ -1,0 +1,23 @@
+# Company-provided / sensitive data — NEVER push to GitHub
+data/raw/
+data/processed/
+*.csv
+*.geojson
+*.xlsx
+
+# But allow small, non-sensitive reference files if needed (uncomment/adjust as needed)
+# !data/external/berlin_boundary.geojson
+
+# Environment / secrets
+.env
+*.key
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS
+.DS_Store
