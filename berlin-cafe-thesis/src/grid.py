@@ -31,8 +31,7 @@ def load_boundary_from_csv(csv_path, location_column="location"):
     """
     boundary_df = pd.read_csv(csv_path)
     boundary_wkt_text = boundary_df[location_column].iloc[0]
-    boundary_geom = wkt.loads(boundary_wkt_text)
-    return boundary_geom
+    return wkt.loads(boundary_wkt_text)
 
 
 def generate_h3_grid(boundary_geom, resolution):
@@ -51,13 +50,11 @@ def generate_h3_grid(boundary_geom, resolution):
     geopandas.GeoDataFrame
         One row per hexagon, with columns: h3_index, resolution, geometry.
     """
-    # Handle MultiPolygon vs Polygon consistently
     if boundary_geom.geom_type == "MultiPolygon":
         polygons = list(boundary_geom.geoms)
     else:
         polygons = [boundary_geom]
 
-    # Fill each polygon piece with H3 hexagons
     hex_cells = set()
     for poly in polygons:
         # Shapely stores (lon, lat); H3 expects (lat, lon)
@@ -66,21 +63,19 @@ def generate_h3_grid(boundary_geom, resolution):
         cells = h3.polygon_to_cells(h3_poly, resolution)
         hex_cells.update(cells)
 
-    hex_ids = list(hex_cells)
+    hex_ids = sorted(hex_cells)  # sorted for reproducible output order
 
-    # Convert each hexagon ID into an actual drawable shape
     hex_geometries = []
     for cell in hex_ids:
         boundary_coords = h3.cell_to_boundary(cell)  # returns (lat, lon) pairs
         lon_lat_coords = [(lon, lat) for lat, lon in boundary_coords]
         hex_geometries.append(Polygon(lon_lat_coords))
 
-    hex_gdf = gpd.GeoDataFrame(
+    return gpd.GeoDataFrame(
         {"h3_index": hex_ids, "resolution": resolution},
         geometry=hex_geometries,
         crs="EPSG:4326",
     )
-    return hex_gdf
 
 
 def generate_and_save_h3_grid(csv_path, resolution, output_path, location_column="location"):
@@ -111,7 +106,6 @@ def generate_and_save_h3_grid(csv_path, resolution, output_path, location_column
 
 
 if __name__ == "__main__":
-    # Example usage — adjust paths as needed
     generate_and_save_h3_grid(
         csv_path="../data/external/berlin_boundary.csv",
         resolution=8,

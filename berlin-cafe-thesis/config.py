@@ -10,7 +10,7 @@ H3_RESOLUTION = 8  # ~500m hexagons
 # --- Target variable ---
 POPULAR_RATING_THRESHOLD = 4.2
 POPULAR_REVIEW_THRESHOLD = 100
-# NOTE: revisit after EDA (Phase 2) — update here once finalized, not in notebooks directly
+# NOTE: revisit after EDA (Phase 2) 
 
 # --- Feature buffer distances (meters) ---
 BUFFER_TRANSPORT = 500

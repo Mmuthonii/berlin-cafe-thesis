@@ -1,12 +1,7 @@
 # Company-provided / sensitive data — NEVER push to GitHub
 data/raw/
 data/processed/
-*.csv
-*.geojson
-*.xlsx
-
-# But allow small, non-sensitive reference files if needed (uncomment/adjust as needed)
-# !data/external/berlin_boundary.geojson
+data/external/
 
 # Environment / secrets
 .env
@@ -19,7 +14,10 @@ __pycache__/
 .venv/
 venv/
 
+# Large output files
+outputs/models/
+
 # OS
 .DS_Store
 
-otebooks/cache/
+notebooks/cache/

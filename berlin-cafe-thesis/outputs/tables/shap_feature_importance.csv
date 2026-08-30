@@ -1,0 +1,11 @@
+feature,mean_abs_shap
+shops_500m,1.0977403
+food_500m,0.97537714
+culture_700m,0.24010696
+transit_stops_500m,0.17440537
+green_spaces_800m,0.12814143
+population_density_per_km2,0.12260104
+offices_500m,0.11061793
+rail_stations_800m,0.04553782
+universities_800m,0.011200202
+coworking_500m,0.0036186993
