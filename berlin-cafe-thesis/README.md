@@ -16,17 +16,23 @@ A reproducible pipeline for predicting popular café density per H3 hexagon in B
 
 1. Clone the repo and set up the environment:
 
-git clone <repo-url>
-cd berlin-cafe-thesis
+```bash
+git clone https://github.com/Mmuthonii/berlin-cafe-thesis.git
+cd berlin-cafe-thesis/berlin-cafe-thesis
 python -m venv venv
-venv\Scripts\activate # Windows
+venv\Scripts\activate      # Windows
 pip install -r requirements.txt
+` ``
+```
+
 
 
 2. Create the required data/output folders (not included in the repo — `data/` is gitignored, and some `outputs/` subfolders are only auto-created partway through the notebook sequence):
 
+```bash
 mkdir data\raw data\external data\processed
 mkdir outputs\models outputs\figures outputs\tables outputs\maps
+```
 
 
 3. Place the required raw data files (not distributed in this repo - see "What goes where" below):
