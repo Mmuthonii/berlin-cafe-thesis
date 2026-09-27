@@ -1,0 +1,4 @@
+source,role,provides,access_method
+Google Places API,Target variable construction,"Café locations, ratings, review counts (institutional access)","Google Places API, via SRH institutional access"
+OpenStreetMap (via osmnx),Predictor feature construction (9 features),"POI locations for transit, shops, food, offices, universities, coworking, culture, green space","osmnx Python package, Overpass API queries"
+Eurostat GISCO Population Grid,Predictor feature construction (1 feature),"Population density per km², area-weighted onto H3 grid",Eurostat GISCO open data portal

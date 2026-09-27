@@ -1,0 +1,11 @@
+feature_name,hypothesis_group,buffer_distance,description
+transit_stops_500m,H1: Transport Access,500m,Count of public transit stops (bus/tram) within buffer
+rail_stations_800m,H1: Transport Access,800m,Count of rail/S-Bahn/U-Bahn stations within buffer
+shops_500m,H2: Commercial & Leisure Activity,500m,Count of retail shop POIs within buffer
+food_500m,H2: Commercial & Leisure Activity,500m,Count of food and beverage venue POIs within buffer
+culture_700m,H2: Commercial & Leisure Activity,700m,"Count of cultural venue POIs (museums, theatres, galleries) within buffer"
+offices_500m,H3: Institutional & Workplace Density,500m,Count of office POIs within buffer
+universities_800m,H3: Institutional & Workplace Density,800m,Count of university/higher-education POIs within buffer
+coworking_500m,H3: Institutional & Workplace Density,500m,Count of coworking space POIs within buffer
+green_spaces_800m,H4: Green Space,800m,"Count of green space POIs (parks, gardens) within buffer"
+population_density_per_km2,H5: Population Density,N/A (area-weighted),"Population density per km², area-weighted overlay onto H3 grid"

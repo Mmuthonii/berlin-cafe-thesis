@@ -1,0 +1,11 @@
+h3==4.5.0
+geopandas
+osmnx
+scikit-learn
+xgboost
+shap
+pandas
+numpy
+matplotlib
+seaborn
+jupyter
